@@ -1,0 +1,123 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String      @id @default(uuid())
+  firstName   String
+  lastName    String
+  email       String      @unique
+  clerkUserId String      @unique
+  profile     Profile?
+  interviews  Interview[]
+  createdAt   DateTime    @default(now())
+}
+
+model Profile {
+  id         String       @id @default(uuid())
+  fkUserId   String       @unique
+  firstName  String
+  lastName   String
+  aboutMe    String
+  experience Experience[]
+  projects   Project[]
+  skills     Skill[]
+  user       User         @relation(fields: [fkUserId], references: [id])
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+}
+
+model Experience {
+  id          String   @id @default(uuid())
+  fkProfileId String   @unique
+  company     String
+  position    String
+  description String
+  startDate   DateTime
+  endDate     DateTime
+  profile     Profile  @relation(fields: [fkProfileId], references: [id])
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  fkProfileId String   @unique
+  projectName String
+  description String
+  startDate   DateTime
+  endDate     DateTime
+  profile     Profile  @relation(fields: [fkProfileId], references: [id])
+}
+
+model Skill {
+  id          Int     @id @default(autoincrement())
+  fkProfileId String  @unique
+  skillName   String
+  description String
+  profile     Profile @relation(fields: [fkProfileId], references: [id])
+}
+
+model Interview {
+  id                String             @id @default(uuid())
+  fkUserId          String             @unique
+  name              String
+  type              InterviewType
+  questions         String[]
+  skills            String[]           @default([])
+  jobDescription    String?
+  interviewFeedback InterviewDetails[]
+  user              User               @relation(fields: [fkUserId], references: [id])
+  createdAt         DateTime           @default(now())
+}
+
+enum InterviewType {
+  PERSONAL
+  CUSTOM
+}
+
+model InterviewDetails {
+  id            String     @id @default(uuid())
+  fkInterviewId String     @unique
+  video         String
+  feedback      Feedback[]
+  summary       Summary?
+  interview     Interview  @relation(fields: [fkInterviewId], references: [id])
+}
+
+model Feedback {
+  id                        String           @id @default(uuid())
+  fkInterviewDetailsId      String           @unique
+  label                     FeedbackLabel
+  question                  String
+  answer                    String
+  feedback                  String
+  suggesstionForImprovement String
+  interviewDetails          InterviewDetails @relation(fields: [fkInterviewDetailsId], references: [id])
+}
+
+enum FeedbackLabel {
+  GOOD
+  NEEDS_IMPROVEMENT
+}
+
+model Summary {
+  id                       String           @id @default(uuid())
+  fkInterviewDetailsId     String           @unique
+  relevantResponses        String
+  clarityAndStructure      String
+  professionalLanguage     String
+  initialIdeas             String
+  additionalNotableAspects String
+  score                    Int
+  interviewDetails         InterviewDetails @relation(fields: [fkInterviewDetailsId], references: [id])
+}
