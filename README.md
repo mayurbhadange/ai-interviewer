@@ -1,55 +1,88 @@
 # [InterviewPrep - AI Interview Assistant](https://interviewprep-sigma.vercel.app/)
 
+<div align="center">
+
 ![Landing Page](assets/landing.png)
 
-> Crack your next interview
+> 🎯 Elevate Your Interview Game with AI-Powered Practice Sessions
 
-## Solution
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-181818?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.io/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-InterviewPrep streamlines the interview preparation process using AI-driven technology. Users can choose between two modes: Personal Interviews, tailored specifically to their profile, and Custom Interviews, designed based on selected skills and job descriptions. The platform is built with TypeScript, Next.js, and Supabase, ensuring a robust, scalable and distributed user experience using a message broker and worker pools.
+</div>
 
-## Features
+## 🌟 Overview
 
-- Streamlined Interview Creation
-- AI-powered interview experience
-- Interview feedback and summary
-- Distributed systems using message queue and worker pools.
-- Uses a message broker for efficient processing.
-- Google OAuth using Supabase
-- Personal interview based on your profile
-- Custom interview according to your usecase
-- Beautiful User Interface
+InterviewPrep is an innovative platform that revolutionizes interview preparation through AI-driven technology. Our solution offers:
 
+- **Personal Interviews**: Tailored sessions based on your unique profile and experience
+- **Custom Interviews**: Specialized practice based on specific skills and job descriptions
+- **Real-time Feedback**: Instant, actionable insights to improve your performance
 
-## DB Diagram
+Built with modern technologies like TypeScript, Next.js, and Supabase, InterviewPrep delivers a robust, scalable, and distributed user experience powered by message brokers and worker pools.
+
+## ✨ Key Features
+
+### Core Functionality
+- 🤖 AI-powered interview simulations
+- 📊 Comprehensive interview feedback and detailed summary
+- 🎯 Personal interviews tailored to your profile
+- 🔄 Custom interviews based on specific job requirements
+- 🎨 Intuitive and modern user interface
+
+### Technical Features
+- 🔐 Secure authentication with Google OAuth via Supabase
+- 📡 Distributed system architecture with message queues
+- 🚀 Efficient task processing through message brokers
+- ⚡ Real-time interactions powered by LiveKit
+- 🔄 Scalable worker pools for enhanced performance
+
+## 📊 Database Architecture
 
 ![DB Diagram](assets/db_diagram.png)
 
-## Tech Stack
+## 🛠️ Technology Stack
 
-- **Next.js** - React framework for production
-- **TypeScript** - Superset of JavaScript for type safety
-- **Tailwind CSS** - Utility-first CSS framework
-- **Supabase** - Used as primary backend functionality and Database
-- **PostgerSQL** - SQL database for storing data and maintain complex data relations
-- **Gemini** - To generate questions and feedback for interviews
-- **LiveKit** - Open-source real-time conversation platform to create AI-interviews
-- **Redis** - Message broker for processing tasks
- 
-## Deployment
-- **Vercel** - Deployment platform for frontend
+### Frontend
+- **Next.js**: Production-grade React framework
+- **TypeScript**: Enhanced type safety and developer experience
+- **Tailwind CSS**: Highly customizable utility-first CSS framework
 
-## Deployment Links
+### Backend & Database
+- **Supabase**: Powerful backend-as-a-service platform
+- **PostgreSQL**: Robust relational database system
+- **Redis**: High-performance message broker
 
-- Website: [InterviewPrep](https://interviewprep-sigma.vercel.app/)
+### AI & Real-time Features
+- **Gemini**: Advanced AI model for interview questions and feedback
+- **LiveKit**: Enterprise-grade real-time communication platform
 
-## Solution Future Aspects
+### Infrastructure
+- **Vercel**: Modern platform for frontend deployment
+- **Message Queues**: Distributed task processing
+- **Worker Pools**: Scalable computation management
 
-- Add a feature to video recording for further analysis
-- Create a high-level distributed architecture
-- Implement microservices architecture
+## 🚀 Live Demo
 
-## Getting Started
+Experience InterviewPrep in action: [Launch Application](https://interviewprep-sigma.vercel.app/)
+
+## 🔮 Future Roadmap
+
+### Planned Features
+- 📹 Video recording and analysis capabilities
+- 🏗️ Enhanced distributed architecture
+- 📦 Microservices implementation
+- 🤖 Advanced AI analysis algorithms
+- 📊 Comprehensive performance analytics
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18.x or higher
+- npm or yarn package manager
+- Git
 
 ### Installation
 
@@ -92,8 +125,23 @@ InterviewPrep streamlines the interview preparation process using AI-driven tech
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-## Contact
+## 📞 Contact & Support
 
-For any inquiries or support, please email us at shreekargade2004@gmail.com or open an issue in this repository.
+### Get in Touch
+- 📧 Email: mayurbhadange2004@gmail.com
+- 🐛 Issues: [GitHub Issues](https://github.com/Shreekar11/AI-Interviewer/issues)
+- 💡 Feature Requests: Open an issue with the "enhancement" tag
 
-Enjoy your AI-Interview process!⚒️🚀
+### Contributing
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests.
+
+### License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+### Ready to ace your next interview? Start practicing with InterviewPrep! 🚀
+
+</div>
