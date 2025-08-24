@@ -132,12 +132,6 @@ Experience InterviewPrep in action: [Launch Application](https://interviewprep-s
 - 🐛 Issues: [GitHub Issues](https://github.com/Shreekar11/AI-Interviewer/issues)
 - 💡 Feature Requests: Open an issue with the "enhancement" tag
 
-### Contributing
-Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests.
-
-### License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 <div align="center">
