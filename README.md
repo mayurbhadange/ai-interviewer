@@ -129,8 +129,7 @@ Experience InterviewPrep in action: [Launch Application](https://interviewprep-s
 
 ### Get in Touch
 - 📧 Email: mayurbhadange2004@gmail.com
-- 🐛 Issues: [GitHub Issues](https://github.com/Shreekar11/AI-Interviewer/issues)
-- 💡 Feature Requests: Open an issue with the "enhancement" tag
+
 
 ### Contributing
 Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests.
