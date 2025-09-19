@@ -50,7 +50,7 @@ export class UserService {
       }
 
       const { error: supabaseError, data } = await supabase
-        .from("users")
+        .from("user")
         .insert({
           first_name: name?.split(" ")[0] || "",
           last_name: name?.split(" ")[1] || "",
@@ -60,6 +60,7 @@ export class UserService {
         .select();
 
       if (supabaseError) {
+        console.error("Supabase error during user creation:", supabaseError);
         if (supabaseError.code === "23505") {
           throw new Error(
             "This email is already registered. Please use a different email."
@@ -68,6 +69,7 @@ export class UserService {
         throw new Error(`Supabase error: ${supabaseError.message}`);
       }
 
+      console.log("User successfully registered in saveUserToSupabase");
       return {
         status: true,
         message: "User successfully registered",
@@ -76,6 +78,7 @@ export class UserService {
       };
     } catch (error: any) {
       console.error("Error in saveUserToSupabase:", error);
+      console.error("Error during user creation:", error);
       return {
         status: false,
         message: `Failed to save user data: ${error.message}`,
@@ -123,6 +126,7 @@ export class UserService {
       const supabase = createServiceClient();
 
       // Get the user record from users table
+      console.log("authUserId:", authUserId);
       const { data: userData, error: userError } = await supabase
         .from("users")
         .select("*")

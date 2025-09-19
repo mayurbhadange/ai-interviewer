@@ -83,6 +83,15 @@ export default function InterviewDialog() {
 
     try {
       const interviewService = new InterviewService();
+      
+      // Log the data we're trying to save
+      console.log('Attempting to save interview:', {
+        name: formData.name,
+        type: interviewType,
+        skills,
+        jobDescription: formData.description,
+      });
+
       const result = await interviewService.saveInterviewToSupabase({
         name: formData.name,
         type: interviewType,
@@ -91,19 +100,31 @@ export default function InterviewDialog() {
         jobDescription: formData.description,
       });
 
-      if (!result.status) {
-        throw new Error("Error saving interview ", result.message as any);
+      if (!result?.status) {
+        const errorMsg = result?.message || 'Failed to save interview';
+        console.error('Save interview error:', errorMsg);
+        toast.error(errorMsg);
+        throw new Error(errorMsg);
       }
+
+      if (!result?.data?.id) {
+        const errorMsg = 'No interview ID returned from server';
+        console.error(errorMsg);
+        toast.error(errorMsg);
+        throw new Error(errorMsg);
+      }
+
       // Reset form
       setFormData({ name: "", description: "" });
       setSkills([]);
       setCurrentSkill("");
       setInterviewType("PERSONAL");
 
-      toast.success(result.message);
-      router.push(`/interview/start/${result?.data?.id}`);
+      toast.success('Interview created successfully!');
+      router.push(`/interview/start/${result.data.id}`);
     } catch (err: any) {
-      console.log("Error: ", err.message);
+      console.error('Interview creation error:', err);
+      toast.error(err.message || 'Failed to create interview');
     } finally {
       setIsSubmitting(false);
     }

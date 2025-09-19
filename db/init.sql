@@ -6,7 +6,7 @@ CREATE TABLE users (
   email TEXT UNIQUE NOT NULL,
   auth_id UUID UNIQUE NOT NULL REFERENCES auth.users(id),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
+);  
 
 -- Profiles Table
 CREATE TABLE profiles (

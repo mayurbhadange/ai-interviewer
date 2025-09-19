@@ -77,7 +77,7 @@ export class InterviewService {
 
         interviewData.questions = questions;
         interviewData.skills = skills?.map(
-          (skill: { name: string }) => skill.name
+          (skill: { skill_name: string }) => skill.skill_name
         );
       } else {
         const questions = await generateCustomQuestions(
@@ -96,7 +96,7 @@ export class InterviewService {
           type: interviewData.type,
           questions: interviewData.questions,
           skills: interviewData.skills || [],
-          job_description: interviewData.jobDescription || [],
+          job_description: interviewData.jobDescription || null,
           created_at: new Date(),
         })
         .select()
