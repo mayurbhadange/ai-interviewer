@@ -129,13 +129,11 @@ Experience InterviewPrep in action: [Launch Application](https://interviewprep-s
 
 ### Get in Touch
 - 📧 Email: mayurbhadange2004@gmail.com
+<<<<<<< HEAD
 
+=======
+>>>>>>> ace4629ca17a99534e95ee73dc27676abc2c3340
 
-### Contributing
-Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests.
-
-### License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
